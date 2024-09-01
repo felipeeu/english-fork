@@ -5,19 +5,16 @@
       "url": "/"
     },
     {
-      "name": "About",
+      "name": "Sobre",
       "url": "/about"
     },
+
     {
-      "name": "Elements",
-      "url": "/elements"
-    },
-    {
-      "name": "Contact",
+      "name": "Contato",
       "url": "/contact"
     },
     {
-      "name": "Method",
+      "name": "Método",
       "url": "",
       "hasChildren": true,
       "children": [
@@ -34,15 +31,15 @@
       "url": "/"
     },
     {
-      "name": "About",
+      "name": "Sobre",
       "url": "/about"
     },
     {
-      "name": "Contact",
+      "name": "Contato",
       "url": "/contact"
     },
     {
-      "name": "Privacy Policy",
+      "name": "Políticas",
       "url": "#"
     }
   ]
