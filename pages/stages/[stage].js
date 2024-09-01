@@ -8,16 +8,28 @@ import Post from "@partials/Post";
 const { blog_folder } = config.settings;
 
 // stage page
-const Stage = ({ postsByCategories, stage, substages, stages }) => {
+const Stage = ({
+  postsByCategories,
+  stage,
+  substages,
+  stages,
+  stageTitles,
+}) => {
+  const stageMarkdown = stageTitles.find(
+    ({ frontmatter }) => frontmatter.id === stage
+  );
+  const stageTitle = stageMarkdown.frontmatter.title;
+  const content = stageMarkdown.content;
   return (
-    <Base title={stage}>
+    <Base title={stageTitle}>
       <div className="section mt-16">
         <div className="container">
           <h1 className="h2 mb-12">
-            <span className="section-title ml-1 inline-block capitalize">
-              {stage.replace(/-/g, " ")}
+            <span className="section-title ml-1 inline-block">
+              {stageTitle}
             </span>
           </h1>
+          <p className="pb-14">{content}</p>
           <div className="row">
             <div className="lg:col-8">
               <div className="row rounded border border-border p-4 px-3 dark:border-darkmode-border lg:p-6">
@@ -60,7 +72,8 @@ export const getStaticProps = ({ params }) => {
     )
   );
   const stages = getTaxonomy(`content/${blog_folder}`, "stages");
-
+  const allStages = getSinglePage(`content/stages`);
+  const stageTitles = allStages.map((stage) => stage);
   const categoriesWithPostsCount = stages.map((stage) => {
     const filteredPosts = substages.filter((post) =>
       post.frontmatter.stages.map((e) => slugify(e)).includes(stage)
@@ -77,6 +90,7 @@ export const getStaticProps = ({ params }) => {
       postsByCategories: filterPosts,
       stage: params.stage,
       stages: categoriesWithPostsCount,
+      stageTitles,
     },
   };
 };
