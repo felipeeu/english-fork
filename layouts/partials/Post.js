@@ -7,7 +7,9 @@ import { FaRegCalendar, FaUserAlt } from "react-icons/fa";
 const Post = ({ post }) => {
   const { summary_length, blog_folder } = config.settings;
   const { meta_author } = config.metadata;
-  const author = post.frontmatter.author ? post.frontmatter.author : meta_author;
+  const author = post.frontmatter.author
+    ? post.frontmatter.author
+    : meta_author;
   return (
     <div className="post">
       <div className="relative">
@@ -20,15 +22,15 @@ const Post = ({ post }) => {
             height={208}
           />
         )}
-        <ul className="absolute top-3 left-2 flex flex-wrap items-center">
-          {post.frontmatter.categories.map((tag, index) => (
+        <ul className="absolute left-2 top-3 flex flex-wrap items-center">
+          {post.frontmatter.stages.map((tag, index) => (
             <li
               className="mx-2 inline-flex h-7 rounded-[35px] bg-primary px-3 text-white"
               key={"tag-" + index}
             >
               <Link
                 className="capitalize"
-                href={`/categories/${tag.replace(" ", "-")}`}
+                href={`/stages/${tag.replace(" ", "-")}`}
               >
                 {tag}
               </Link>

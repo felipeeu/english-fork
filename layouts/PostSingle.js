@@ -20,11 +20,11 @@ const PostSingle = ({
   content,
   mdxContent,
   slug,
-  posts,
+  substages,
   allCategories,
   relatedPosts,
 }) => {
-  let { description, title, date, image, categories } = frontmatter;
+  let { description, title, date, image, stages } = frontmatter;
   description = description ? description : content.slice(0, 120);
 
   const { theme } = useTheme();
@@ -52,15 +52,15 @@ const PostSingle = ({
                       className="rounded-lg"
                     />
                   )}
-                  <ul className="absolute top-3 left-2 flex flex-wrap items-center">
-                    {categories.map((tag, index) => (
+                  <ul className="absolute left-2 top-3 flex flex-wrap items-center">
+                    {stages.map((tag, index) => (
                       <li
                         className="mx-2 inline-flex h-7 rounded-[35px] bg-primary px-3 text-white"
                         key={"tag-" + index}
                       >
                         <Link
                           className="capitalize"
-                          href={`/categories/${tag.replace(" ", "-")}`}
+                          href={`/stages/${tag.replace(" ", "-")}`}
                         >
                           {tag}
                         </Link>
@@ -70,7 +70,7 @@ const PostSingle = ({
                 </div>
                 {config.settings.InnerPaginationOptions.enableTop && (
                   <div className="mt-4">
-                    <InnerPagination posts={posts} date={date} />
+                    <InnerPagination substages={substages} date={date} />
                   </div>
                 )}
                 {markdownify(title, "h1", "lg:text-[42px] mt-4")}
@@ -93,7 +93,7 @@ const PostSingle = ({
                   <MDXRemote {...mdxContent} components={shortcodes} />
                 </div>
                 {config.settings.InnerPaginationOptions.enableBottom && (
-                  <InnerPagination posts={posts} date={date} />
+                  <InnerPagination substages={substages} date={date} />
                 )}
               </article>
               <div className="mt-16">
@@ -107,13 +107,13 @@ const PostSingle = ({
               </div>
             </div>
             <Sidebar
-              posts={posts.filter((post) => post.slug !== slug)}
-              categories={allCategories}
+              substages={substages.filter((post) => post.slug !== slug)}
+              stages={allCategories}
             />
           </div>
         </div>
 
-        {/* Related posts */}
+        {/* Related substages */}
         <div className="container mt-20">
           <h2 className="section-title">Related Posts</h2>
           <div className="row mt-16">

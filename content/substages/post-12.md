@@ -1,8 +1,8 @@
 ---
-title: "How to make toys from old Olarpaper"
-date: 2022-04-04T06:00:00Z
-image: /images/post/post-6.png
-categories: ["artificial-intelligence", "programming"]
+title: "What is a Virtual Assistant"
+date: 2022-04-04T12:00:00Z
+image: /images/post/post-4.png
+stages: ["Expansão da Linguagem"]
 featured: true
 draft: false
 ---
@@ -20,6 +20,6 @@ Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
 
 ![alter-text](/images/post/post-1.png)
-*Example Caption*
+_Example Caption_
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!

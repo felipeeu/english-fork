@@ -8,17 +8,17 @@ const SearchPage = () => {
   const router = useRouter();
   const { query } = router;
   const keyword = slugify(query.key);
-  const { posts } = useSearchContext();
+  const { substages } = useSearchContext();
 
-  const searchResults = posts.filter((product) => {
+  const searchResults = substages.filter((product) => {
     if (product.frontmatter.draft) {
       return !product.frontmatter.draft;
     }
     if (slugify(product.frontmatter.title).includes(keyword)) {
       return product;
     } else if (
-      product.frontmatter.categories.find((category) =>
-        slugify(category).includes(keyword)
+      product.frontmatter.stages.find((stage) =>
+        slugify(stage).includes(keyword)
       )
     ) {
       return product;

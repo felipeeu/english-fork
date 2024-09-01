@@ -7,16 +7,15 @@ import { slugify } from "@lib/utils/textConverter";
 import Post from "@partials/Post";
 const { blog_folder } = config.settings;
 
-// category page
-const Category = ({ postsByCategories, category, posts, categories }) => {
+// stage page
+const Stage = ({ postsByCategories, stage, substages, stages }) => {
   return (
-    <Base title={category}>
+    <Base title={stage}>
       <div className="section mt-16">
         <div className="container">
           <h1 className="h2 mb-12">
-            Showing posts from
             <span className="section-title ml-1 inline-block capitalize">
-              {category.replace("-", " ")}
+              {stage.replace(/-/g, " ")}
             </span>
           </h1>
           <div className="row">
@@ -29,7 +28,7 @@ const Category = ({ postsByCategories, category, posts, categories }) => {
                 ))}
               </div>
             </div>
-            <Sidebar posts={posts} categories={categories} />
+            <Sidebar substages={substages} stages={stages} />
           </div>
         </div>
       </div>
@@ -37,47 +36,47 @@ const Category = ({ postsByCategories, category, posts, categories }) => {
   );
 };
 
-export default Category;
+export default Stage;
 
-// category page routes
+// stage page routes
 export const getStaticPaths = () => {
-  const allCategories = getTaxonomy(`content/${blog_folder}`, "categories");
+  const allCategories = getTaxonomy(`content/${blog_folder}`, "stages");
 
-  const paths = allCategories.map((category) => ({
+  const paths = allCategories.map((stage) => ({
     params: {
-      category: category,
+      stage: stage,
     },
   }));
 
   return { paths, fallback: false };
 };
 
-// category page data
+// stage page data
 export const getStaticProps = ({ params }) => {
-  const posts = getSinglePage(`content/${blog_folder}`);
-  const filterPosts = posts.filter((post) =>
-    post.frontmatter.categories.find((category) =>
-      slugify(category).includes(params.category)
+  const substages = getSinglePage(`content/${blog_folder}`);
+  const filterPosts = substages.filter((post) =>
+    post.frontmatter.stages.find((stage) =>
+      slugify(stage).includes(params.stage)
     )
   );
-  const categories = getTaxonomy(`content/${blog_folder}`, "categories");
+  const stages = getTaxonomy(`content/${blog_folder}`, "stages");
 
-  const categoriesWithPostsCount = categories.map((category) => {
-    const filteredPosts = posts.filter((post) =>
-      post.frontmatter.categories.map(e => slugify(e)).includes(category)
+  const categoriesWithPostsCount = stages.map((stage) => {
+    const filteredPosts = substages.filter((post) =>
+      post.frontmatter.stages.map((e) => slugify(e)).includes(stage)
     );
     return {
-      name: category,
-      posts: filteredPosts.length,
+      name: stage,
+      substages: filteredPosts.length,
     };
   });
 
   return {
     props: {
-      posts,
+      substages,
       postsByCategories: filterPosts,
-      category: params.category,
-      categories: categoriesWithPostsCount,
+      stage: params.stage,
+      stages: categoriesWithPostsCount,
     },
   };
 };

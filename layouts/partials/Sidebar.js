@@ -14,8 +14,8 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 const { blog_folder } = config.settings;
 const { about, featured_posts, newsletter } = config.widgets;
 
-const Sidebar = ({ posts, categories, className }) => {
-  const sortPostByDate = sortByDate(posts);
+const Sidebar = ({ substages, stages, className }) => {
+  const sortPostByDate = sortByDate(substages);
   const featuredPosts = sortPostByDate.filter(
     (post) => post.frontmatter.featured
   );
@@ -23,7 +23,7 @@ const Sidebar = ({ posts, categories, className }) => {
   const [showRecent, setShowRecent] = useState(true);
 
   return (
-    <aside className={`${className} px-0 lg:px-6 lg:col-4`}>
+    <aside className={`${className} px-0 lg:col-4 lg:px-6`}>
       {about.enable && (
         <div className="relative rounded border border-border p-6 text-center dark:border-darkmode-border">
           <ImageFallback
@@ -41,17 +41,17 @@ const Sidebar = ({ posts, categories, className }) => {
         </div>
       )}
 
-      {/* categories widget */}
-      {categories.enable && (
+      {/* stages widget */}
+      {stages.enable && (
         <div className="mt-6 rounded border border-border p-6 dark:border-darkmode-border">
           <h4 className="section-title mb-12 text-center">
             {featured_posts.title}
           </h4>
           <ul>
-            {categories.map((category, i) => (
+            {stages.map((stage, i) => (
               <li
                 className={`relative mb-2 flex items-center justify-between pl-6 text-[16px] font-bold capitalize text-dark dark:text-darkmode-light ${
-                  i !== categories.length - 1 &&
+                  i !== stages.length - 1 &&
                   "border-b border-border  dark:border-darkmode-border"
                 }`}
                 key={i}
@@ -73,10 +73,10 @@ const Sidebar = ({ posts, categories, className }) => {
                     fill="#2ba283"
                   />
                 </svg>
-                <Link className="py-2" href={`/categories/${category.name}`}>
-                  {category.name.replace("-", " ")}
-                  <span className="absolute top-1/2 right-0 -translate-y-1/2 text-[10px] text-gray-500">
-                    {category.posts}
+                <Link className="py-2" href={`/stages/${stage.name}`}>
+                  {stage.name.replace("-", " ")}
+                  <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[10px] text-gray-500">
+                    {stage.substages}
                   </span>
                 </Link>
               </li>

@@ -8,28 +8,25 @@ import { getSinglePage } from "@lib/contentParser";
 import { FaFolder } from "react-icons/fa";
 import { slugify } from "@lib/utils/textConverter";
 
-const Categories = ({ categories }) => {
+const Stages = ({ stages }) => {
   return (
-    <Base title={"categories"}>
+    <Base title={"stages"}>
       <section className="section pt-0">
         {markdownify(
-          "Categories",
+          "Estágios da Aquisição",
           "h1",
           "h2 mb-16 bg-theme-light dark:bg-darkmode-theme-dark py-12 text-center lg:text-[55px]"
         )}
         <div className="container pt-12 text-center">
           <ul className="row">
-            {categories.map((category, i) => (
-              <li
-                key={`category-${i}`}
-                className="mt-4 block lg:col-4 xl:col-3"
-              >
+            {stages.map((stage, i) => (
+              <li key={`stage-${i}`} className="mt-4 block lg:col-4 xl:col-3">
                 <Link
-                  href={`/categories/${category.name}`}
+                  href={`/stages/${stage.name}`}
                   className="flex w-full items-center justify-center rounded-lg bg-theme-light px-4 py-4 font-bold text-dark transition hover:bg-primary hover:text-white  dark:bg-darkmode-theme-dark dark:text-darkmode-light dark:hover:bg-primary dark:hover:text-white"
                 >
                   <FaFolder className="mr-1.5" />
-                  {humanize(category.name)} ({category.posts})
+                  {humanize(stage.name)} ({stage.substages})
                 </Link>
               </li>
             ))}
@@ -40,23 +37,23 @@ const Categories = ({ categories }) => {
   );
 };
 
-export default Categories;
+export default Stages;
 
 export const getStaticProps = () => {
-  const posts = getSinglePage(`content/${blog_folder}`);
-  const categories = getTaxonomy(`content/${blog_folder}`, "categories");
-  const categoriesWithPostsCount = categories.map((category) => {
-    const filteredPosts = posts.filter((post) =>
-      post.frontmatter.categories.map(e => slugify(e)).includes(category)
+  const substages = getSinglePage(`content/${blog_folder}`);
+  const stages = getTaxonomy(`content/${blog_folder}`, "stages");
+  const categoriesWithPostsCount = stages.map((stage) => {
+    const filteredPosts = substages.filter((post) =>
+      post.frontmatter.stages.map((e) => slugify(e)).includes(stage)
     );
     return {
-      name: category,
-      posts: filteredPosts.length,
+      name: stage,
+      substages: filteredPosts.length,
     };
   });
   return {
     props: {
-      categories: categoriesWithPostsCount,
+      stages: categoriesWithPostsCount,
     },
   };
 };

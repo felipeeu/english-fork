@@ -8,14 +8,14 @@ import Post from "@partials/Post";
 const { blog_folder, summary_length } = config.settings;
 
 // blog pagination
-const BlogPagination = ({ postIndex, posts, currentPage, pagination }) => {
+const BlogPagination = ({ postIndex, substages, currentPage, pagination }) => {
   const indexOfLastPost = currentPage * pagination;
   const indexOfFirstPost = indexOfLastPost - pagination;
-  const orderedPosts = sortByDate(posts);
+  const orderedPosts = sortByDate(substages);
   const currentPosts = orderedPosts.slice(indexOfFirstPost, indexOfLastPost);
   const { frontmatter } = postIndex;
   const { title } = frontmatter;
-  const totalPages = Math.ceil(posts.length / pagination);
+  const totalPages = Math.ceil(substages.length / pagination);
 
   return (
     <Base title={title}>
@@ -64,13 +64,13 @@ export const getStaticPaths = () => {
 export const getStaticProps = async ({ params }) => {
   const currentPage = parseInt((params && params.slug) || 1);
   const { pagination } = config.settings;
-  const posts = getSinglePage(`content/${blog_folder}`);
+  const substages = getSinglePage(`content/${blog_folder}`);
   const postIndex = await getListPage(`content/${blog_folder}/_index.md`);
 
   return {
     props: {
       pagination: pagination,
-      posts: posts,
+      substages: substages,
       currentPage: currentPage,
       postIndex: postIndex,
     },

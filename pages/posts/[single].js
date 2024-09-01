@@ -1,5 +1,5 @@
 import config from "@config/config.json";
-import PostSingle from "@layouts/PostSingle";
+import Single from "@layouts/PostSingle";
 import { getSinglePage } from "@lib/contentParser";
 import { getTaxonomy } from "@lib/taxonomyParser";
 import parseMDX from "@lib/utils/mdxParser";
@@ -12,7 +12,7 @@ const Article = ({
   slug,
   allCategories,
   relatedPosts,
-  posts,
+  substages,
 }) => {
   const { frontmatter, content } = post;
 
@@ -24,7 +24,7 @@ const Article = ({
       slug={slug}
       allCategories={allCategories}
       relatedPosts={relatedPosts}
-      posts={posts}
+      substages={substages}
     />
   );
 };
@@ -47,25 +47,23 @@ export const getStaticPaths = () => {
 // get post single content
 export const getStaticProps = async ({ params }) => {
   const { single } = params;
-  const posts = getSinglePage(`content/${blog_folder}`);
-  const post = posts.find((p) => p.slug == single);
+  const substages = getSinglePage(`content/${blog_folder}`);
+  const post = substages.find((p) => p.slug == single);
   const mdxContent = await parseMDX(post.content);
-  // related posts
-  const relatedPosts = posts.filter((p) =>
-    post.frontmatter.categories.some((cate) =>
-      p.frontmatter.categories.includes(cate)
-    )
+  // related substages
+  const relatedPosts = substages.filter((p) =>
+    post.frontmatter.stages.some((cate) => p.frontmatter.stages.includes(cate))
   );
 
-  //all categories
-  const categories = getTaxonomy(`content/${blog_folder}`, "categories");
-  const categoriesWithPostsCount = categories.map((category) => {
-    const filteredPosts = posts.filter((post) =>
-      post.frontmatter.categories.includes(category)
+  //all stages
+  const stages = getTaxonomy(`content/${blog_folder}`, "stages");
+  const categoriesWithPostsCount = stages.map((stage) => {
+    const filteredPosts = substages.filter((post) =>
+      post.frontmatter.stages.includes(stage)
     );
     return {
-      name: category,
-      posts: filteredPosts.length,
+      name: stage,
+      substages: filteredPosts.length,
     };
   });
   return {
@@ -75,7 +73,7 @@ export const getStaticProps = async ({ params }) => {
       slug: single,
       allCategories: categoriesWithPostsCount,
       relatedPosts: relatedPosts,
-      posts: posts,
+      substages: substages,
     },
   };
 };

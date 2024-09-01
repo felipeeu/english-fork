@@ -1,8 +1,8 @@
 import { sortByDate } from "@lib/utils/sortFunctions";
 import Link from "next/link";
 
-const InnerPagination = ({ posts, date }) => {
-  const orderedPosts = sortByDate(posts);
+const InnerPagination = ({ substages, date }) => {
+  const orderedPosts = sortByDate(substages);
   const lastIndex = orderedPosts.length - 1;
   const postIndex = orderedPosts.findIndex(
     (post) => post.frontmatter.date == date

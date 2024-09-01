@@ -1,8 +1,8 @@
 ---
-title: "Robotic world is growing very fast"
-date: 2022-04-04T11:00:00Z
-image: /images/post/post-3.png
-categories: ["assistance"]
+title: "My work from home workstation"
+date: 2022-04-04T10:00:00Z
+image: /images/post/post-2.png
+stages: ["Expansão da Linguagem"]
 featured: false
 draft: false
 ---
@@ -20,6 +20,6 @@ Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
 
 ![alter-text](/images/post/post-1.png)
-*Example Caption*
+_Example Caption_
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!

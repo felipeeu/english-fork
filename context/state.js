@@ -1,11 +1,11 @@
 import { createContext, useContext } from "react";
-import posts from "../.json/posts.json";
+import substages from "../.json/substages.json";
 
 const SearchContext = createContext();
 
 export const JsonContext = ({ children }) => {
   const state = {
-    posts,
+    substages,
   };
   return (
     <SearchContext.Provider value={state}>{children}</SearchContext.Provider>

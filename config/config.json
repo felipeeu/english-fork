@@ -1,13 +1,13 @@
 {
   "site": {
-    "title": "Geeky Nextjs",
+    "title": "English Method",
     "base_url": "/",
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_white": "/images/logo-light.png",
     "logo_width": "150",
     "logo_height": "39",
-    "logo_text": "Geeky"
+    "logo_text": "English Method"
   },
   "settings": {
     "theme_switcher": true,
@@ -18,7 +18,7 @@
       "enableBottom": true
     },
     "summary_length": 200,
-    "blog_folder": "posts"
+    "blog_folder": "substages"
   },
   "params": {
     "tag_manager_id": "",
@@ -28,7 +28,7 @@
   "metadata": {
     "meta_author": "Statichunt",
     "meta_image": "/images/og-image.png",
-    "meta_description": "Geeky Nextjs Personal Blog Template"
+    "meta_description": "English Method"
   },
   "widgets": {
     "about": {
@@ -40,7 +40,7 @@
       "title": "Blog Categories",
       "showPost": 3
     },
-    "categories": {
+    "stages": {
       "enable": true,
       "title": "Blog Categories"
     },

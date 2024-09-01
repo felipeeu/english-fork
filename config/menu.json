@@ -17,13 +17,13 @@
       "url": "/contact"
     },
     {
-      "name": "Pages",
+      "name": "Method",
       "url": "",
       "hasChildren": true,
       "children": [
         {
-          "name": "Categories",
-          "url": "/categories"
+          "name": "Estágios",
+          "url": "/stages"
         }
       ]
     }
