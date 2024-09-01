@@ -2,7 +2,7 @@
 title: "What you need to know about Programming"
 date: 2022-04-04T14:00:00Z
 image: /images/post/post-6.png
-stages: ["Telegráfico"]
+stages: ["telegraphic"]
 featured: false
 draft: false
 ---

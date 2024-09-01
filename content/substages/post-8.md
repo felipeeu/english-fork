@@ -2,7 +2,7 @@
 title: "Drone Software and Development"
 date: 2022-04-04T08:00:00Z
 image: /images/post/post-8.png
-stages: ["Telegráfico"]
+stages: ["telegraphic"]
 featured: true
 draft: false
 ---

@@ -2,7 +2,7 @@
 title: My work from home workstation
 date: 2022-04-04T02:00:00Z
 image: /images/post/post-2.png
-stages: ["Holofrástico"]
+stages: [holophrastic"]
 featured: true
 draft: false
 ---

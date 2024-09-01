@@ -2,7 +2,7 @@
 title: "Why you need to learn PHP"
 date: 2022-04-04T13:00:00Z
 image: /images/post/post-5.png
-stages: ["Pré-Lingüístico"]
+stages: ["pre"]
 featured: false
 draft: false
 ---

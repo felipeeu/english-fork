@@ -2,7 +2,7 @@
 title: "How to make toys from old Olarpaper"
 date: 2022-04-04T06:00:00Z
 image: /images/post/post-6.png
-stages: ["Expansão da Linguagem"]
+stages: ["expansion"]
 featured: true
 draft: false
 ---

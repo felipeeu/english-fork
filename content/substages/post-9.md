@@ -2,7 +2,7 @@
 title: "Github Repository Controls"
 date: 2022-04-04T09:00:00Z
 image: /images/post/post-1.png
-stages: ["Holofrástico"]
+stages: ["holophrastic"]
 featured: false
 draft: false
 ---

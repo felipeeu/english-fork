@@ -2,7 +2,7 @@
 title: "Artificial Intelligence and Robotics In A Nutshell"
 date: 2022-04-04T07:00:00Z
 image: /images/post/post-7.png
-stages: ["Holofrástico"]
+stages: ["holophrastic"]
 featured: false
 draft: false
 ---

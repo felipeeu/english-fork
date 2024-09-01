@@ -2,7 +2,7 @@
 title: "What is a Virtual Assistant"
 date: 2022-04-04T12:00:00Z
 image: /images/post/post-4.png
-stages: ["Expansão da Linguagem"]
+stages: ["expansion"]
 featured: true
 draft: false
 ---
