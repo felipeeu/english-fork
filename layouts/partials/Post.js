@@ -46,7 +46,7 @@ const Post = ({ post }) => {
           {post.frontmatter.title}
         </Link>
       </h3>
-      <ul className="flex items-center space-x-4">
+      {/* <ul className="flex items-center space-x-4">
         <li>
           <Link
             className="inline-flex items-center font-secondary text-xs leading-3"
@@ -60,7 +60,7 @@ const Post = ({ post }) => {
           <FaRegCalendar className="mr-1.5" />
           {dateFormat(post.frontmatter.date)}
         </li>
-      </ul>
+      </ul> */}
       <p>{post.content.slice(0, Number(summary_length))}</p>
       <Link
         className="btn btn-outline-primary mt-4"

@@ -1,13 +1,13 @@
 ---
 banner:
-  title: Welcome **!**
-  title_small: "to John Bravo's Blog"
-  content: Are Developer and recently started your own business Already made website to ensure presence wants to develop.
+  title: Bem-vindo **!**
+  title_small: "ao Method Name"
+  content: Fale inglês usando o mesmo método de aquisição de linguagem dos poliglotas.
   image_enable: true
   image: /images/banner-author.png
   button:
     enable: true
-    label: Know About Me
+    label: Saiba mais
     link: /about
     rel: ""
 
@@ -23,5 +23,4 @@ promotion:
 recent_posts:
   title: Recent Posts
   enable: true
-
 ---

@@ -1,5 +1,5 @@
 import config from "@config/config.json";
-import Single from "@layouts/PostSingle";
+import PostSingle from "@layouts/PostSingle";
 import { getSinglePage } from "@lib/contentParser";
 import { getTaxonomy } from "@lib/taxonomyParser";
 import parseMDX from "@lib/utils/mdxParser";

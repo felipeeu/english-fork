@@ -1,8 +1,8 @@
 ---
-title: "How to make toys from old Olarpaper"
+title: "Superentendimento"
 date: 2022-04-04T05:00:00Z
 image: /images/post/post-5.png
-stages: ["telegraphic"]
+stages: ["holophrastic"]
 featured: true
 draft: false
 ---

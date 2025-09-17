@@ -1,16 +1,16 @@
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import { getTaxonomy } from "@lib/taxonomyParser";
-import { humanize, markdownify } from "@lib/utils/textConverter";
+import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
 const { blog_folder } = config.settings;
 import { getSinglePage } from "@lib/contentParser";
 import { FaFolder } from "react-icons/fa";
 import { slugify } from "@lib/utils/textConverter";
 
-const Stages = ({ stages }) => {
+const Stages = ({ stages, stagesFrontmatter }) => {
   return (
-    <Base title={"stages"}>
+    <Base title={"Estágios da Aquisição"}>
       <section className="section pt-0">
         {markdownify(
           "Estágios da Aquisição",
@@ -26,7 +26,8 @@ const Stages = ({ stages }) => {
                   className="flex w-full items-center justify-center rounded-lg bg-theme-light px-4 py-4 font-bold text-dark transition hover:bg-primary hover:text-white  dark:bg-darkmode-theme-dark dark:text-darkmode-light dark:hover:bg-primary dark:hover:text-white"
                 >
                   <FaFolder className="mr-1.5" />
-                  {humanize(stage.name)} ({stage.substages})
+                  {getStageName(stagesFrontmatter, stage.name)} (
+                  {stage.substages})
                 </Link>
               </li>
             ))}
@@ -42,6 +43,8 @@ export default Stages;
 export const getStaticProps = () => {
   const substages = getSinglePage(`content/${blog_folder}`);
   const stages = getTaxonomy(`content/${blog_folder}`, "stages");
+  const allStages = getSinglePage(`content/stages`);
+  const stagesFrontmatter = allStages.map(({ frontmatter }) => frontmatter);
   const categoriesWithPostsCount = stages.map((stage) => {
     const filteredPosts = substages.filter((post) =>
       post.frontmatter.stages.map((e) => slugify(e)).includes(stage)
@@ -54,6 +57,10 @@ export const getStaticProps = () => {
   return {
     props: {
       stages: categoriesWithPostsCount,
+      stagesFrontmatter,
     },
   };
 };
+
+const getStageName = (stagesFrontmatter, stage) =>
+  stagesFrontmatter?.find(({ id }) => id === stage)?.title;

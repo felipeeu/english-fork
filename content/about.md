@@ -1,5 +1,5 @@
 ---
-title: About The Author
+title: Sobre o Método
 image: /images/author.png
 description: "meta description"
 layout: about
@@ -13,7 +13,7 @@ education:
     - university: "Easteast University"
       content: "1985 • 1991 • gravida nibh velvelit auctor alimo quet menean solli"
     - university: "Southeast University"
-      content: "1985 • 1991 • gravida nibh velvelit auctor alimo quet menean solli"  
+      content: "1985 • 1991 • gravida nibh velvelit auctor alimo quet menean solli"
 
 experience:
   title: Work Experience
@@ -28,7 +28,6 @@ experience:
     - Best Article
     - Best New Newel
     - Best Book
-
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi amet, ultrices scelerisue cras. Tincidunt hendrerit egestas venenatis risus sit nunc. Est esglit non in ipsum lect;aaus adipiscing et enim porttitor. Dui ultrices et volud eetpat nunc, turpis rutrum elit vestibululm ipsum. Arcu fringilla duis vitae mos dsdllis duicras interdum purus cursus massa metus. Acc umsan felaais, egsdvet nisi, viverra turpis fermentum sit suspf bafedfb ndisse fermentum consectetur. Facilisis feugiat trisique orci tempor sed masd fbsssa tristique ultrices sodales. Augue est sapien elementum facilisis. Enim tincidnt cras interdum purus ndisse. morbi quis nunc.

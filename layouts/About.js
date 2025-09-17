@@ -27,7 +27,7 @@ const About = ({ data }) => {
         <div className="content text-left">
           <MDXRemote {...mdxContent} components={shortcodes} />
         </div>
-
+        {/* 
         <div className="row mt-24 text-left lg:flex-nowrap">
           <div className="lg:col-6 ">
             <div className="rounded border border-border p-6 dark:border-darkmode-border ">
@@ -59,7 +59,7 @@ const About = ({ data }) => {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

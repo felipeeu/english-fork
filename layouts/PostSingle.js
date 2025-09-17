@@ -74,7 +74,7 @@ const PostSingle = ({
                   </div>
                 )}
                 {markdownify(title, "h1", "lg:text-[42px] mt-4")}
-                <ul className="flex items-center space-x-4">
+                {/* <ul className="flex items-center space-x-4">
                   <li>
                     <Link
                       className="inline-flex items-center font-secondary text-xs leading-3"
@@ -88,15 +88,19 @@ const PostSingle = ({
                     <FaRegCalendar className="mr-1.5" />
                     {dateFormat(date)}
                   </li>
-                </ul>
+                </ul> */}
+
                 <div className="content mb-16">
                   <MDXRemote {...mdxContent} components={shortcodes} />
                 </div>
+                <h1 className="mb-40 flex h-40 justify-center bg-red-500 pt-5 text-6xl text-white">
+                  ÁREA PARA VÍDEOS
+                </h1>
                 {config.settings.InnerPaginationOptions.enableBottom && (
                   <InnerPagination substages={substages} date={date} />
                 )}
               </article>
-              <div className="mt-16">
+              {/* <div className="mt-16">
                 {disqus.enable && (
                   <DiscussionEmbed
                     key={theme}
@@ -104,7 +108,7 @@ const PostSingle = ({
                     config={disqusConfig}
                   />
                 )}
-              </div>
+              </div> */}
             </div>
             <Sidebar
               substages={substages.filter((post) => post.slug !== slug)}
@@ -115,7 +119,7 @@ const PostSingle = ({
 
         {/* Related substages */}
         <div className="container mt-20">
-          <h2 className="section-title">Related Posts</h2>
+          <h2 className="section-title">Subestágios Relacionados</h2>
           <div className="row mt-16">
             {relatedPosts.slice(0, 3).map((post, index) => (
               <div key={"post-" + index} className="mb-12 lg:col-4">
